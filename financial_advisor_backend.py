@@ -44,10 +44,4 @@ tools=[check_stock_price_and_trend, get_company_valuation_metrics]
 finance_agent=create_react_agent(model=model, tools=tools)
 
 
-test_query="Should I buy Apple (AAPL) stock? Tell me its current 5-day trend and P/E ratio."
-inputs={"messages":[("user", test_query)]}
-response=finance_agent.invoke(inputs)
 
-
-final_message=response["messages"][-1]
-print(final_message.content)
