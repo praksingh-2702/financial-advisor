@@ -4,13 +4,13 @@ import yfinance as yf
 import pandas as pd
 from langchain_core.tools import tool
 from langgraph.prebuilt import create_react_agent
+from langgraph.checkpoint.memory import InMemorySaver
 from dotenv import load_dotenv
 
 
 
 load_dotenv()
 model=ChatGroq(model="llama-3.3-70b-versatile")
-
 
 
 @tool
@@ -41,7 +41,8 @@ def get_company_valuation_metrics(ticker: str) -> str:
 
 
 tools=[check_stock_price_and_trend, get_company_valuation_metrics]
-finance_agent=create_react_agent(model=model, tools=tools)
+checkpointer =InMemorySaver()
+finance_agent=create_react_agent(model=model, tools=tools, checkpointer=checkpointer)
 
 
 

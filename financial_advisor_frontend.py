@@ -9,6 +9,10 @@ st.title("💬 Financial Advisor Chatbot")
 st.caption("Ask me about stock trajectories, valuations, or trends (e.g., AAPL, NVDA, TSLA)")
 
 # 2. Cache the backend agent so it doesn't reload on every keystroke
+if "thread_id" not in st.session_state:
+    import uuid
+    # Generates a unique ID like "session_abcd1234" so the backend keeps a dedicated memory ledger
+    st.session_state.thread_id = f"session_{uuid.uuid4().hex[:8]}"
 
 # 3. Create or maintain chat history memory inside the browser session
 if "messages" not in st.session_state:
@@ -36,9 +40,11 @@ if user_query := st.chat_input("Type your financial query here..."):
             try:
                 # Wrap input text string into the list structured format required by LangGraph
                 inputs = {"messages": [("user", user_query)]}
+
+                config={"configurable": {"thread_id": st.session_state.thread_id}}
                 
                 # Invoke backend agent execution
-                response = finance_agent.invoke(inputs)
+                response = finance_agent.invoke(inputs,config=config)
                 
                 # Grab the final text string payload from the response message array
                 final_answer = response["messages"][-1].content
