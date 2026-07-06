@@ -187,10 +187,6 @@ streamlit run app.py
 
 ---
 
-##  License
-
-This project is intended for educational and learning purposes.
-
 ---
 
 ##  Acknowledgements
