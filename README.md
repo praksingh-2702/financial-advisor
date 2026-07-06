@@ -20,7 +20,7 @@ An AI-powered financial analysis assistant built using **LangGraph**, **LangChai
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Category | Technologies |
 |----------|--------------|
