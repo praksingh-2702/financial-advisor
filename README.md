@@ -138,13 +138,8 @@ streamlit run app.py
 
 ## 📸 Screenshots
 
-Add screenshots of:
-- Home page
-- Chat interface
-- Sidebar conversation history
-- Sample stock analysis
+<img width="959" height="497" alt="image" src="https://github.com/user-attachments/assets/a25e7e0d-010f-4d46-941b-23574d06c5bb" />
 
----
 
 ## 🔮 Future Improvements
 
