@@ -6,9 +6,9 @@ An AI-powered financial analysis assistant built using **LangGraph**, **LangChai
 
 ##  Features
 
-- 📈 Real-time stock price retrieval
-- 📊 5-day stock trend analysis
-- 💰 Company valuation metrics
+-  Real-time stock price retrieval
+-  5-day stock trend analysis
+-  Company valuation metrics
   - Trailing P/E Ratio
   - Forward P/E Ratio
   - Market Capitalization
