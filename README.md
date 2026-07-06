@@ -12,11 +12,11 @@ An AI-powered financial analysis assistant built using **LangGraph**, **LangChai
   - Trailing P/E Ratio
   - Forward P/E Ratio
   - Market Capitalization
-- 🤖 ReAct AI Agent powered by LangGraph
-- 🧠 Persistent chat memory using SQLite
-- 💬 Multi-session conversation support
-- ⚡ Streaming AI responses
-- 🎨 Interactive Streamlit interface
+-  ReAct AI Agent powered by LangGraph
+-  Persistent chat memory using SQLite
+-  Multi-session conversation support
+-  Streaming AI responses
+-  Interactive Streamlit interface
 
 ---
 
