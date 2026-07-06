@@ -1,4 +1,4 @@
-# 📈 AI Financial Analysis Assistant
+#  AI Financial Analysis Assistant
 
 An AI-powered financial analysis assistant built using **LangGraph**, **LangChain**, **Groq Llama 3.3**, and **Streamlit**. The application leverages a **ReAct AI agent** to intelligently invoke financial analysis tools, retrieve live market data from Yahoo Finance, and maintain persistent conversation memory across multiple sessions.
 
@@ -187,13 +187,13 @@ streamlit run app.py
 
 ---
 
-## 📄 License
+##  License
 
 This project is intended for educational and learning purposes.
 
 ---
 
-## 🙏 Acknowledgements
+##  Acknowledgements
 
 - LangGraph
 - LangChain
