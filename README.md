@@ -1,10 +1,10 @@
-# 💹 AI Financial Analysis Assistant
+#  AI Financial Analysis Assistant
 
 An AI-powered financial analysis assistant built using **LangGraph**, **LangChain**, **Groq Llama 3.3**, and **Streamlit**. The application provides real-time stock insights by combining live market data with an intelligent ReAct agent capable of invoking financial analysis tools and maintaining persistent conversation memory.
 
 ---
 
-## 🚀 Features
+##  Features
 
 - 📈 Real-time stock price retrieval
 - 📊 5-day stock trend analysis
@@ -20,7 +20,7 @@ An AI-powered financial analysis assistant built using **LangGraph**, **LangChai
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Category | Technologies |
 |----------|--------------|
@@ -33,7 +33,7 @@ An AI-powered financial analysis assistant built using **LangGraph**, **LangChai
 
 ---
 
-## 🏗️ Project Architecture
+##  Project Architecture
 
 ```text
                 Streamlit UI
@@ -52,7 +52,7 @@ An AI-powered financial analysis assistant built using **LangGraph**, **LangChai
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 Financial-Analysis-Assistant/
@@ -67,7 +67,7 @@ Financial-Analysis-Assistant/
 
 ---
 
-## ⚙️ Installation
+##  Installation
 
 ### Clone the repository
 
@@ -116,7 +116,7 @@ streamlit run app.py
 
 ---
 
-## 💬 Example Queries
+##  Example Queries
 
 - Analyze AAPL
 - Show me the valuation of NVDA
@@ -126,7 +126,7 @@ streamlit run app.py
 
 ---
 
-## 🧠 How It Works
+##  How It Works
 
 1. User submits a financial query through the Streamlit interface.
 2. The LangGraph ReAct agent determines whether a financial tool is required.
@@ -136,12 +136,12 @@ streamlit run app.py
 
 ---
 
-## 📸 Screenshots
+##  Screenshot
 
 <img width="959" height="497" alt="image" src="https://github.com/user-attachments/assets/a25e7e0d-010f-4d46-941b-23574d06c5bb" />
 
 
-## 🔮 Future Improvements
+##  Future Improvements
 
 - Portfolio risk analysis
 - News sentiment analysis
@@ -154,13 +154,13 @@ streamlit run app.py
 
 ---
 
-## 📜 License
+##  License
 
 This project is intended for educational and learning purposes.
 
 ---
 
-## ⭐ Acknowledgements
+##  Acknowledgements
 
 - LangChain
 - LangGraph
