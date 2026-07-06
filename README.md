@@ -1,6 +1,6 @@
-#  AI Financial Analysis Assistant
+# 📈 AI Financial Analysis Assistant
 
-An AI-powered financial analysis assistant built using **LangGraph**, **LangChain**, **Groq Llama 3.3**, and **Streamlit**. The application provides real-time stock insights by combining live market data with an intelligent ReAct agent capable of invoking financial analysis tools and maintaining persistent conversation memory.
+An AI-powered financial analysis assistant built using **LangGraph**, **LangChain**, **Groq Llama 3.3**, and **Streamlit**. The application leverages a **ReAct AI agent** to intelligently invoke financial analysis tools, retrieve live market data from Yahoo Finance, and maintain persistent conversation memory across multiple sessions.
 
 ---
 
@@ -13,55 +13,58 @@ An AI-powered financial analysis assistant built using **LangGraph**, **LangChai
   - Forward P/E Ratio
   - Market Capitalization
 -  ReAct AI Agent powered by LangGraph
--  Persistent chat memory using SQLite
--  Multi-session conversation support
+-  Persistent conversation memory using LangGraph + SQLite
+-  Multi-session chat support
 -  Streaming AI responses
 -  Interactive Streamlit interface
 
 ---
 
-##  Tech Stack
+## 🛠️ Tech Stack
 
 | Category | Technologies |
 |----------|--------------|
+| Language | Python |
 | AI Framework | LangGraph, LangChain |
 | LLM | Groq (Llama 3.3 70B Versatile) |
 | Frontend | Streamlit |
-| Financial Data | yfinance |
+| Financial Data | yfinance (Yahoo Finance) |
 | Database | SQLite |
-| Language | Python |
+| Memory | LangGraph SqliteSaver |
 
 ---
 
-##  Project Architecture
+##  System Architecture
 
 ```text
-                Streamlit UI
+                    User
                      │
                      ▼
-        Financial Analysis Agent
-          (LangGraph ReAct)
+               Streamlit UI
+                     │
+                     ▼
+        LangGraph ReAct Agent
                      │
       ┌──────────────┴──────────────┐
       ▼                             ▼
  Financial Analysis Tools      SQLite Memory
       │
       ▼
-  Yahoo Finance API
+ Yahoo Finance (yfinance API)
 ```
 
 ---
 
 ##  Project Structure
 
-```
+```text
 Financial-Analysis-Assistant/
 │
-├── financial_advisor_backend.py
-├── app.py
-├── finance_agent_memory.db
+├── app.py                         # Streamlit frontend
+├── financial_advisor_backend.py   # LangGraph agent & financial tools
+├── finance_agent_memory.db        # SQLite conversation memory
 ├── requirements.txt
-├── .env
+├── .env.example
 └── README.md
 ```
 
@@ -69,14 +72,14 @@ Financial-Analysis-Assistant/
 
 ##  Installation
 
-### Clone the repository
+### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/your-repository.git
-cd your-repository
+git clone https://github.com/your-username/Financial-Analysis-Assistant.git
+cd Financial-Analysis-Assistant
 ```
 
-### Create a virtual environment
+### 2. Create a virtual environment
 
 ```bash
 python -m venv venv
@@ -88,27 +91,27 @@ Windows
 venv\Scripts\activate
 ```
 
-Linux / macOS
+Linux/macOS
 
 ```bash
 source venv/bin/activate
 ```
 
-### Install dependencies
+### 3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Configure environment variables
+### 4. Configure environment variables
 
-Create a `.env` file.
+Create a `.env` file in the project root.
 
+```env
+GROQ_API_KEY=your_groq_api_key
 ```
-GROQ_API_KEY=your_api_key_here
-```
 
-### Run the application
+### 5. Run the application
 
 ```bash
 streamlit run app.py
@@ -119,63 +122,81 @@ streamlit run app.py
 ##  Example Queries
 
 - Analyze AAPL
-- Show me the valuation of NVDA
-- What is the current trend of TSLA?
-- Is MSFT overvalued?
-- Compare the valuation metrics of GOOGL
+- Show the current price of NVDA
+- What is the valuation of TSLA?
+- Compare AAPL and MSFT
+- Is GOOGL overvalued?
+- Show the 5-day trend for META
 
 ---
 
 ##  How It Works
 
-1. User submits a financial query through the Streamlit interface.
-2. The LangGraph ReAct agent determines whether a financial tool is required.
-3. Appropriate tools retrieve live market data from Yahoo Finance.
-4. The LLM interprets the results and generates a natural-language response.
-5. Conversation history is stored using SQLite, enabling persistent multi-session memory.
+1. The user submits a financial query through the Streamlit interface.
+2. The LangGraph ReAct agent determines whether external financial tools are required.
+3. Appropriate tools fetch live market data using Yahoo Finance.
+4. The LLM analyzes the retrieved data and generates a natural-language response.
+5. Chat history is stored in SQLite using LangGraph's checkpointing mechanism, enabling persistent multi-session conversations.
 
 ---
 
 ##  Screenshots
 
-<img width="959" height="497" alt="image" src="https://github.com/user-attachments/assets/a25e7e0d-010f-4d46-941b-23574d06c5bb" />
+### Home Screen
 
+<img width="959" alt="Home" src="https://github.com/user-attachments/assets/a25e7e0d-010f-4d46-941b-23574d06c5bb" />
 
-<img width="953" height="506" alt="Screenshot 2026-06-06 204056" src="https://github.com/user-attachments/assets/594580a5-256e-49c4-b49f-2b0246f03f1b" />
+### Company Valuation
 
+<img width="953" alt="Valuation" src="https://github.com/user-attachments/assets/594580a5-256e-49c4-b49f-2b0246f03f1b" />
 
-<img width="956" height="447" alt="Screenshot 2026-06-06 222609" src="https://github.com/user-attachments/assets/2171c7aa-d47d-4df1-9953-f73c44594794" />
+### Stock Trend Analysis
 
+<img width="956" alt="Trend Analysis" src="https://github.com/user-attachments/assets/2171c7aa-d47d-4df1-9953-f73c44594794" />
 
-<img width="959" height="485" alt="Screenshot 2026-06-06 222855" src="https://github.com/user-attachments/assets/28bbadde-d457-4ae9-b6ef-9e695d7711f8" />
+### Persistent Conversation Memory
 
-
-
-
-
-##  Future Improvements
-
-- Portfolio risk analysis
-- News sentiment analysis
-- Technical indicators (RSI, MACD, SMA)
-- Stock comparison dashboard
-- Price prediction models
-- Portfolio performance tracking
-- Watchlist management
-- PDF investment reports
+<img width="959" alt="Memory" src="https://github.com/user-attachments/assets/28bbadde-d457-4ae9-b6ef-9e695d7711f8" />
 
 ---
 
-##  License
+##  Future Improvements
+
+-  Technical indicators (RSI, MACD, SMA)
+-  News sentiment analysis
+-  Portfolio performance tracking
+-  Portfolio risk analysis
+-  Interactive stock comparison dashboard
+-  PDF investment reports
+-  Watchlist management
+-  Support for multiple LLM providers
+
+---
+
+##  Key Concepts Demonstrated
+
+- AI Agents with LangGraph
+- ReAct Agent Architecture
+- Tool Calling
+- LLM Integration
+- Persistent Memory
+- Function Calling
+- Streamlit Application Development
+- Financial Data Analysis
+- SQLite Persistence
+
+---
+
+## 📄 License
 
 This project is intended for educational and learning purposes.
 
 ---
 
-##  Acknowledgements
+## 🙏 Acknowledgements
 
-- LangChain
 - LangGraph
+- LangChain
 - Groq
 - Streamlit
 - Yahoo Finance (yfinance)
